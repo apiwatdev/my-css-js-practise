@@ -153,7 +153,41 @@ function scrollActive() {
 window.addEventListener("scroll", scrollActive);
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
+function scrollHeader(){
+  const nav = document.getElementById('header')
 
+  if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+}
+
+window.addEventListener('scroll',scrollHeader)
 /*==================== SHOW SCROLL UP ====================*/
 
+function scrollUp(){
+  const scrollUp = document.getElementById('scroll-up')
+  if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+
+window.addEventListener('scroll', scrollUp)
 /*==================== DARK LIGHT THEME ====================*/
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'uil-sun'
+
+const selectedTheme = localStorage.getItem('selection-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon =()=> themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+if(selectedTheme) {
+  document.body.classList[selectedTheme == 'dark' ? 'add' : 'remove'](darkTheme)
+  themeButton.classList[selectedTheme == 'dark' ? 'add' : 'remove'](iconTheme)
+}
+
+themeButton.addEventListener('click', ()=>{
+  document.body.classList.toggle(darkTheme)
+  themeButton.classList.toggle(iconTheme)
+
+  localStorage.setItem('selection-theme', getCurrentTheme())
+  localStorage.setItem('selected-icon', getCurrentIcon())
+})
