@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate Popup Model Box</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="profile">
+        <div class="profile-img">
+          <img src="profile.jpg" alt="" />
+        </div>
+        <span class="profile__name">Apiwat Soodlek</span>
+        <span class="profile__profession">Full Stack Developer</span>
+        <div class="profile__button" id="hireBtn">
+          <i class="bx bxs-envelope">
+            <button>Hire me</button>
+          </i>
+        </div>
+      </div>
+
+      <div class="popup-outer">
+        <div class="popup-box">
+          <i id="close" class="bx bx-x close"></i>
+          <div class="profile-text">
+            <img src="profile.jpg" alt="" />
+
+            <div class="text">
+              <span class="name">Apiwat Soodlek</span>
+              <span class="profression">Full Stack Developer</span>
+            </div>
+          </div>
+          <form action="">
+            <textarea placeholder="Enter your message"></textarea>
+            <div class="button">
+              <button id="close" class="cancel">Cancel</button>
+              <button class="send">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
